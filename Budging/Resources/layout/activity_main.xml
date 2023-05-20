@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/relativeLayout2"
-            android:background="@drawable/budging-corner"
+            android:background="@drawable/budging_corner"
             android:gravity="center">
 
             <TextView
