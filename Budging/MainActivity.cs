@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
@@ -12,6 +13,9 @@ namespace Budging
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+
+        Button ctnBtn;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,6 +28,9 @@ namespace Budging
             ViewGroup rootLayout = FindViewById<ViewGroup>(Android.Resource.Id.Content);
             SetTypefaceForView(rootLayout, budgingfont);
 
+            ctnBtn = FindViewById<Button>(Resource.Id.cont_btn);
+
+            ctnBtn.Click += conClick;
         }
 
         private void SetTypefaceForView(View view, Typeface typeface)
@@ -41,6 +48,11 @@ namespace Budging
                     SetTypefaceForView(viewGroup.GetChildAt(i), typeface);
                 }
             }
+        }
+
+        private void conClick(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(HomeScreen));
         }
     }
 }

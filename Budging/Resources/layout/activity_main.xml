@@ -24,12 +24,13 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:gravity="center"
-                android:background="@android:color/white"
+                android:background="@drawable/logo"
                 android:id="@+id/relativeLayout3" >
 
                 <TextView
                     android:text="B"
                     android:textSize="50dp"
+                    android:textFontWeight="900"
                     android:textColor="#228D57"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -66,13 +67,14 @@
                 android:id="@+id/myTextView2"
                 android:layout_marginBottom="40px"/>
 
-            <Button
-                android:text="Continue"
-                android:textColor="#E8E9C9"
-                android:layout_width="270dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_design"
-                android:id="@+id/button1" />
+            <android.widget.Button
+                android:text="CONTINUE"
+                android:textFontWeight="700"
+                style="@style/CustomButton"
+                android:layout_width="220dp"
+                android:layout_height="47dp"
+                android:id="@+id/cont_btn" />
+
         </LinearLayout>
 
     </LinearLayout>
