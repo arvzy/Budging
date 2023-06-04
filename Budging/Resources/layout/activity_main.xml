@@ -9,46 +9,72 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/linearLayout1"
-        android:background="#09A015">
+        android:background="#228D57"
+        android:id="@+id/linearLayout1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:id="@+id/relativeLayout1"
-            android:background="@android:color/holo_green_light"
             android:gravity="center">
 
-            <TextView
-                android:text="WELCOME TO BUDGING"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:id="@+id/textView2" />
+            <RelativeLayout
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:background="@android:color/white"
+                android:id="@+id/relativeLayout3" >
+
+                <TextView
+                    android:text="B"
+                    android:textSize="50dp"
+                    android:textColor="#228D57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView1" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/relativeLayout2"
             android:background="@drawable/budging_corner"
+            android:orientation="vertical"
             android:gravity="center">
 
             <TextView
-                android:text="WELCOME TO BUDGING"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Welcome to Budging"
+                android:textSize="59dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:id="@+id/textView2" />
+                android:textColor="#4D4C4C"
+                android:id="@+id/titleView" />
 
-        </RelativeLayout>
-        
+            <TextView
+                android:text="Expenses Tracker/Management"
+                android:textSize="16.5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="#4D4C4C"
+                android:id="@+id/myTextView2"
+                android:layout_marginBottom="40px"/>
+
+            <Button
+                android:text="Continue"
+                android:textColor="#E8E9C9"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_design"
+                android:id="@+id/button1" />
+        </LinearLayout>
 
     </LinearLayout>
-
-    
 
 </RelativeLayout>

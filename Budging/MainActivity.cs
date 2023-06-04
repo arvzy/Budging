@@ -1,7 +1,11 @@
 ﻿using Android.App;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
+using Android.Views;
+using Android.Widget;
 using AndroidX.AppCompat.App;
+using System;
 
 namespace Budging
 {
@@ -14,12 +18,29 @@ namespace Budging
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-        }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Typeface budgingfont = Typeface.CreateFromAsset(this.Assets, "Fonts/amaranthfont.ttf");
+
+            ViewGroup rootLayout = FindViewById<ViewGroup>(Android.Resource.Id.Content);
+            SetTypefaceForView(rootLayout, budgingfont);
+
+        }
+
+        private void SetTypefaceForView(View view, Typeface typeface)
+        {
+            if (view is TextView)
+            {
+                ((TextView)view).Typeface = typeface;
+            }
+
+            else if (view is ViewGroup)
+            {
+                ViewGroup viewGroup = (ViewGroup)view;
+                for (int i = 0; i < viewGroup.ChildCount; i++)
+                {
+                    SetTypefaceForView(viewGroup.GetChildAt(i), typeface);
+                }
+            }
         }
     }
 }
