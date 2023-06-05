@@ -53,6 +53,7 @@ namespace Budging
         private void conClick(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(HomeScreen));
+            StartActivity(intent);
         }
     }
 }

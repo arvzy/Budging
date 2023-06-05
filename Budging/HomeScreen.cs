@@ -12,12 +12,13 @@ using System.Text;
 using System.IO;
 using Xamarin.Essentials;
 using static Android.Provider.ContactsContract.CommonDataKinds;
+using Android.Text;
+using Java.Lang;
 
 namespace Budging
 {
     [Activity(Label = "Activity1")]
-    public class HomeScreen : Activity
-    {
+    public class HomeScreen : Activity {
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,51 +29,36 @@ namespace Budging
 
             EditText editText = FindViewById<EditText>(Resource.Id.editText1);
             TextView textView = FindViewById<TextView>(Resource.Id.textView2);
-
-            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "notes.db");
-            var dbContext = new NotesDatabaseContext(databasePath);
-
             Button saveBtn = FindViewById<Button>(Resource.Id.button1);
+            TextView budgetView = FindViewById<TextView>(Resource.Id.budgetView);
 
-            saveBtn.Click += (sender, e) =>
-            {
-                var content = editText.Text;
-                var note = new Note { Content = content };
-                dbContext.AddNote(note);
-                editText.Text = string.Empty;
-            };
+            editText.AddTextChangedListener(new MyTextWatcher(budgetView));
 
-            var notes = dbContext.GetNotes();
-
-            foreach (var note in notes)
-            {
-                textView.Text = note.Content;
-            }
         }
 
-        public class Note
+        public class MyTextWatcher : Java.Lang.Object, ITextWatcher
         {
-            [PrimaryKey, AutoIncrement]
-            public int Id { get; set; }
-            public string Content { get; set; }
+            private TextView textView;
+
+            public MyTextWatcher(TextView budgetView) 
+            { 
+                this.textView = budgetView;
+            }
+
+            public void AfterTextChanged(IEditable s)
+            {
+            }
+
+            public void BeforeTextChanged(ICharSequence s, int start, int count, int after)
+            {
+            }
+
+            public void OnTextChanged(ICharSequence s, int start, int before, int count)
+            {
+                string input = s.ToString();
+                textView.Text = "Your current budget: " + input;
+            }
         }
 
-        public class NotesDatabaseContext : SQLiteConnection
-        {
-            public NotesDatabaseContext(string databasePath) : base(databasePath)
-            {
-                CreateTable<Note>();
-            }
-
-            public IEnumerable<Note> GetNotes() 
-            {
-                return Table<Note>().ToList();
-            }
-
-            public void AddNote(Note note)
-            {
-                Insert(note);
-            }
-        }
     }
 }

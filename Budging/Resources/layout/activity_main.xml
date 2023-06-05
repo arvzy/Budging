@@ -50,6 +50,7 @@
 
             <TextView
                 android:text="Welcome to Budging"
+                android:textFontWeight="900"
                 android:textSize="59dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

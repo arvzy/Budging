@@ -14,7 +14,7 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/linearLayout1" >
+        android:id="@+id/linearLayout1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:gravity="center"
-            android:id="@+id/linearLayout2" >
+            android:id="@+id/linearLayout2">
 
             <TextView
                 android:text="Budget Managing"
@@ -37,95 +37,110 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:minWidth="25px"
-            android:minHeight="25px"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/home_screen_bg"
-            android:gravity="center"
-            android:paddingHorizontal="90px"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/home_screen_bg"
+                android:paddingHorizontal="90px"
+                android:id="@+id/linearLayout3" >
+
+                <!--<android.widget.Button
+                    android:text="MONDAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40px"
+                    style="@style/WeekButton"
+                    android:id="@+id/mondayBtn" />
+
+                <android.widget.Button
+                    android:text="TUESDAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40px"
+                    style="@style/WeekButton"
+                    android:id="@+id/button2" />
+
+                <android.widget.Button
+                    android:text="WEDNESDAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40px"
+                    style="@style/WeekButton"
+                    android:id="@+id/button3" />
+
+                <android.widget.Button
+                    android:text="THURSDAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40px"
+                    style="@style/WeekButton"
+                    android:id="@+id/button4" />
+
+                <android.widget.Button
+                    android:text="FRIDAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40px"
+                    style="@style/WeekButton"
+                    android:id="@+id/button5" />
+
+                <android.widget.Button
+                    android:text="SATURDAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40px"
+                    style="@style/WeekButton"
+                    android:id="@+id/button6" />
+
+                <android.widget.Button
+                    android:text="SUNDAY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40px"
+                    style="@style/WeekButton"
+                    android:id="@+id/button7" />-->
             
-            android:id="@+id/linearLayout3" >
+                <TextView
+                    android:text="Your current Budget: "
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="70px"
+                    android:layout_marginTop="100px"
+                    android:id="@+id/budgetView" />
 
-            <!--<android.widget.Button
-                android:text="MONDAY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40px"
-                style="@style/WeekButton"
-                android:id="@+id/mondayBtn" />
+                <EditText
+                    android:background="#fff"
+                    android:hint=" Enter your Budget"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="80px"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/editText1" />
 
-            <android.widget.Button
-                android:text="TUESDAY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40px"
-                style="@style/WeekButton"
-                android:id="@+id/button2" />
+                <Button
+                    android:text="SAVE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button1" />
 
-            <android.widget.Button
-                android:text="WEDNESDAY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40px"
-                style="@style/WeekButton"
-                android:id="@+id/button3" />
+                <TextView
+                    android:text=""
+                    android:textSize="80px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2" />
 
-            <android.widget.Button
-                android:text="THURSDAY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40px"
-                style="@style/WeekButton"
-                android:id="@+id/button4" />
+            </LinearLayout>
+        </ScrollView>
 
-            <android.widget.Button
-                android:text="FRIDAY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40px"
-                style="@style/WeekButton"
-                android:id="@+id/button5" />
 
-            <android.widget.Button
-                android:text="SATURDAY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40px"
-                style="@style/WeekButton"
-                android:id="@+id/button6" />
-
-            <android.widget.Button
-                android:text="SUNDAY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40px"
-                style="@style/WeekButton"
-                android:id="@+id/button7" />-->
-
-            <EditText
-                android:background="#fff"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginBottom="80px"
-                android:id="@+id/editText1" />
-
-            <Button
-                android:text="SAVE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button1" />
-
-            <TextView
-                android:text=""
-                android:textSize="80px"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView2" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
